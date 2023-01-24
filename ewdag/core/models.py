@@ -24,12 +24,12 @@ class Edge(models.Model):
     from_node = models.ForeignKey(
         Node,
         on_delete=models.CASCADE,
-        related_name="parent_edges",
+        related_name="child_edges",
     )
     to_node = models.ForeignKey(
         Node,
         on_delete=models.CASCADE,
-        related_name="child_edges",
+        related_name="parent_edges",
     )
     weight = models.IntegerField()
 
